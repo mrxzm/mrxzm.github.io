@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <title>Mrxzm</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen"> -->
+    
+    <link href="private/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <script type="text/javascript" src="private/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="private/jquery-3.0.0.min.js"></script>
     
   </head>
   <body>
@@ -24,14 +24,21 @@
       </div>
 
       <footer class="site-footer">
-
-        <span class="site-footer-credits">我看看能不能改<a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+        <span class="site-footer-credits">我的主页</span>
       </footer>
 
     </section>
 
   <script type="text/javascript">
-  alert("hello javascript");
+  $(function(){
+	  
+	  $('button').click(function(){
+		  alert($('.main-content').html());  
+	  });
+	  
+	  
+  });
+  	
   </script>
   </body>
 </html>
