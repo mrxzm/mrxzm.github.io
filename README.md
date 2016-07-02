@@ -1,4 +1,4 @@
 # mrxzm.github.io
 mrxzm
 
-hello wrold!
+我的博客
