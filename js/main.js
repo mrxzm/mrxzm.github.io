@@ -4,13 +4,15 @@ jQuery(document).ready(function($) {
     /*	------------------------------- Loading ----------------------------- */
     /* ---------------------------------------------------------------------- */
 
-    /*Page Preloading*/
+    /*页面加载*/
     $(window).load(function() {
-        $('#spinner').fadeOut(200);
-        $('#preloader').delay(200).fadeOut('slow');
-        $('.wrapper').fadeIn(200);
-        $('#custumize-style').fadeIn(200);
+
     });
+
+    $('#spinner').fadeOut(200);
+    $('#preloader').delay(200).fadeOut('slow');
+    $('.wrapper').fadeIn(200);
+    $('#custumize-style').fadeIn(200);
 
     /* ---------------------------------------------------------------------- */
     /* ------------------------------- Taps profile ------------------------- */
