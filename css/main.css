@@ -318,9 +318,6 @@ h2.resp-accordion:first-child {
         height: 100% !important;
         overflow-y: hidden !important;
     }
-    .contact-form .main-heading {
-        margin-top: 45px;
-    }
 
     .tiltle_contacts {
         margin-bottom: 0 !important;
@@ -390,57 +387,6 @@ h2.resp-accordion:hover {
 }
 
 /*--------------------------------------------------
-------------------- Google Maps --------------------
----------------------------------------------------*/
-
-#map {
-    display: block;
-    width: 100% !important;
-    height: 300px !important;
-    margin: 0 auto;
-    -moz-box-shadow: 0 5px 20px #ccc;
-    -webkit-box-shadow: 0 5px 20px #ccc;
-    box-shadow: 0 5px 20px #ccc;
-    border-bottom: 1px solid #CCC;
-    border-top: 1px solid #CCC;
-}
-#map.large {
-    height: 500px;
-}
-.overlay {
-    display: block;
-    text-align: center;
-    color: #fff;
-    font-size: 60px;
-    line-height: 80px;
-    opacity: 0.8;
-    background: #4477aa;
-    border: solid 3px #336699;
-    border-radius: 4px;
-    box-shadow: 2px 2px 10px #333;
-    text-shadow: 1px 1px 1px #666;
-    padding: 0 4px;
-}
-.overlay_arrow {
-    left: 50%;
-    margin-left: -16px;
-    width: 0;
-    height: 0;
-    position: absolute;
-}
-.overlay_arrow.above {
-    bottom: -15px;
-    border-left: 16px solid transparent;
-    border-right: 16px solid transparent;
-    border-top: 16px solid #336699;
-}
-.overlay_arrow.below {
-    top: -15px;
-    border-left: 16px solid transparent;
-    border-right: 16px solid transparent;
-    border-bottom: 16px solid #336699;
-}
-/*--------------------------------------------------
 ----------------------- Contact --------------------
 ---------------------------------------------------*/
 
@@ -448,23 +394,8 @@ h2.resp-accordion:hover {
     padding: 30px 0;
     overflow: hidden;
 }
-.contact-info, .contact-form {
-    float: left;
-    margin-bottom: 30px;
-}
 .contact-form {
     width: 100%;
-}
-.contact-info ul {
-    float: left;
-    margin-left: 0px; 
-}
-.contact-info ul li {
-    font-size: 13px;
-    line-height: 20px;
-    color: #666;
-    overflow: hidden;
-    width: 267px;
 }
 #contactform,
 #comment_form {
@@ -538,10 +469,6 @@ h2.resp-accordion:hover {
     -webkit-border-radius: 10px;
     border-radius: 10px;
     margin-bottom: 10px;
-}
-#maps-status:hover {
-    color: #fff;
-    background: #2f9b68;
 }
 #contact {
     background-color: #fff;
