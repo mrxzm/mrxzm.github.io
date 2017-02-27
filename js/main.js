@@ -3,7 +3,7 @@ jQuery(document).ready(function($) {
     /* ---------------------------------------------------------------------- */
     /*	------------------------------- config ------------------------------ */
     /* ---------------------------------------------------------------------- */
-
+    var tplNames = ['profile', 'contact'];
 
     /* ---------------------------------------------------------------------- */
     /*	------------------------------- Loading ----------------------------- */
@@ -11,10 +11,13 @@ jQuery(document).ready(function($) {
 
     /*页面加载*/
     $(window).load(function() {
-        var content = getTempFileContent('profile');
-        var str = template(content, new Object());
-        $('#profile').html(str);
-
+        //加载模板文件
+        for(var i = 0;i< tplNames.length; i++){
+            var label = getTempFileLabel(tplNames[i]);
+            var content = getTempFileContent(tplNames[i]);
+            $('#verticalTab .resp-tabs-list').append(template(label, new Object()));
+            $('#' + tplNames[i]).html(template(content, new Object()));
+        }
     });
 
     //这是开始加载是显示的东西 因为如果没加载完图片会一直在旋转，不太适合，所以放在了同文件一起加载
