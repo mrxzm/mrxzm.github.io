@@ -18,6 +18,16 @@ jQuery(document).ready(function($) {
             $('#verticalTab .resp-tabs-list').append(template(label, new Object()));
             $('#' + tplNames[i]).html(template(content, new Object()));
         }
+        //加载选项卡插件
+        //<script type="text/javascript" src="js/easyResponsiveTabs.min.js"></script>
+        // $('body').append('<script type="text/javascript" src="js/easyResponsiveTabs.min.js"></script>');
+        // alert("加载成功！");
+        $('#verticalTab').easyResponsiveTabs({
+            type: 'vertical',
+            width: 'auto',
+            // tabidentify: 'tabs',
+            fit: true
+        });
     });
 
     //这是开始加载是显示的东西 因为如果没加载完图片会一直在旋转，不太适合，所以放在了同文件一起加载
@@ -44,13 +54,9 @@ jQuery(document).ready(function($) {
     /* -------------------------- easyResponsiveTabs ------------------------ */
     /* ---------------------------------------------------------------------- */
 
-    $('#verticalTab').easyResponsiveTabs({
-        type: 'vertical',
-        width: 'auto',
-        fit: true
-    });
 
-    $("h2.resp-accordion").click(function() {
+
+    $("h2.resp-accordion").on('click', function() {
         $(this).find(".icon_menu").addClass("icon_menu_active");
         $("h2.resp-accordion").not(this).find(".icon_menu").removeClass("icon_menu_active");
 
@@ -58,7 +64,7 @@ jQuery(document).ready(function($) {
         $('html, body').animate({scrollTop: $('h2.resp-accordion').offset().top - 50}, 600);
     });
 
-    $(".resp-tabs-list li").click(function() {
+    $(".resp-tabs-list").on('click', 'li', function() {
         $(this).find(".icon_menu").addClass("icon_menu_active");
         $(".resp-tabs-list li").not(this).find(".icon_menu").removeClass("icon_menu_active");
     });
