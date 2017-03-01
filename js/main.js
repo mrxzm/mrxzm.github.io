@@ -16,7 +16,7 @@ jQuery(document).ready(function($) {
             var label = getTempFileLabel(tplNames[i]);
             var content = getTempFileContent(tplNames[i]);
             $('#verticalTab .resp-tabs-list').append(template(label, new Object()));
-            $('#' + tplNames[i]).html(template(content, new Object()));
+            $('.resp-tabs-container').append(template(content, new Object()));
         }
         //加载选项卡插件
         //<script type="text/javascript" src="js/easyResponsiveTabs.min.js"></script>
@@ -70,7 +70,7 @@ jQuery(document).ready(function($) {
     });
 
 
-    $(".resp-tabs-list li").hover(function() {
+    $(".resp-tabs-list").on('hover', 'li', function() {
         $(this).find(".icon_menu").addClass("icon_menu_hover");
     }, function() {
         $(this).find(".icon_menu").removeClass("icon_menu_hover");

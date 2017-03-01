@@ -144,12 +144,8 @@
 
                     var $currentTab = $(this);
                     $currentTab.on('click','li', function () {
-                        alert("点击了标签卡");
-                        // alert($respTabs.html());
                         var $currentTab = $(this);
-                        alert($currentTab.html());
                         var $tabAria = $currentTab.attr('aria-controls');
-
                         if ($currentTab.hasClass('resp-accordion') && $currentTab.hasClass('resp-tab-active')) {
                             $respTabs.find('.resp-tab-content-active.' + options.tabidentify).slideUp('', function () {
                                 $(this).addClass('resp-accordion-closed');
