@@ -54,8 +54,6 @@ jQuery(document).ready(function($) {
     /* -------------------------- easyResponsiveTabs ------------------------ */
     /* ---------------------------------------------------------------------- */
 
-
-
     $("h2.resp-accordion").on('click', function() {
         $(this).find(".icon_menu").addClass("icon_menu_active");
         $("h2.resp-accordion").not(this).find(".icon_menu").removeClass("icon_menu_active");
@@ -107,7 +105,7 @@ jQuery(document).ready(function($) {
     });
 
 
-    $('ul.resp-tabs-list li[class^=tabs-]').click(function() {
+    $('ul.resp-tabs-list').on('click', 'li[class^=tabs-]', function() {
 
         var tab_name = $(this).attr('data-tab-name');
 
@@ -310,25 +308,25 @@ jQuery(document).ready(function($) {
     /* ------------------------------ Google Maps --------------------------- */
     /* ---------------------------------------------------------------------- */
 
-    var map;
-    function initialize() {
-        map = new GMaps({
-            div: '#map',
-            lat: -37.817917,
-            lng: 144.965065,
-            zoom: 16
-
-        });
-        map.addMarker({
-            lat: -37.81792,
-            lng: 144.96506,
-            title: 'Marker with InfoWindow',
-            icon: 'images/pins-map/map-marker.png',
-            infoWindow: {
-                content: '<p>Melbourne Victoria, 300, Australia</p>'
-            }
-        });
-    }
+    // var map;
+    // function initialize() {
+    //     map = new GMaps({
+    //         div: '#map',
+    //         lat: -37.817917,
+    //         lng: 144.965065,
+    //         zoom: 16
+    //
+    //     });
+    //     map.addMarker({
+    //         lat: -37.81792,
+    //         lng: 144.96506,
+    //         title: 'Marker with InfoWindow',
+    //         icon: 'images/pins-map/map-marker.png',
+    //         infoWindow: {
+    //             content: '<p>Melbourne Victoria, 300, Australia</p>'
+    //         }
+    //     });
+    // }
 
     /* ---------------------------------------------------------------------- */
     /* --------------------------------- Blog ------------------------------- */
