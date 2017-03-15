@@ -18,10 +18,8 @@ jQuery(document).ready(function($) {
             $('#verticalTab .resp-tabs-list').append(template(label, new Object()));
             $('.resp-tabs-container').append(template(content, new Object()));
         }
-        //加载选项卡插件
-        //<script type="text/javascript" src="js/easyResponsiveTabs.min.js"></script>
-        // $('body').append('<script type="text/javascript" src="js/easyResponsiveTabs.min.js"></script>');
-        // alert("加载成功！");
+
+        //加载Tab选项卡插件
         $('#verticalTab').easyResponsiveTabs({
             type: 'vertical',
             width: 'auto',
