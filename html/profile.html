@@ -1,14 +1,14 @@
 <!-- profile 个人信息 -->
 <!--标签-->
-<script id="profile-label" type="text/html">
+<template id="profile-label" type="text/html">
     <li class="tabs-profile hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a profile"
         data-tab-name="profile">
         <span class="tite-list">个人信息</span>
         <i class="fa fa-user icon_menu icon_menu_active"></i>
     </li>
-</script>
+</template>
 <!--内容-->
-<script id="profile-content" type="text/html">
+<template id="profile-content" type="text/html">
     <div id="profile" class="content_2">
     <!-- .title -->
     <h1 class="h-bloc">介绍</h1>
@@ -75,11 +75,6 @@
                 我喜欢很多东西譬如羽毛球、咖啡、香蕉、小说、编程。羽毛球是我唯一会的体育项目，如果你看到我时问：“打篮球吗？”我会笑着回答“不打！”。同理，咖啡香蕉两个东西也被我赋予特别的含义，青春与童年。我如同其他人一般喜爱小说，她能洗涤我错杂心灵，有时加上音乐的效果更佳。但许多时候编程更能使我陶醉，陶醉在未知的世界里。
             </p>
 
-            <!--<p style="margin-bottom:20px">-->
-                <!--<i class="fa fa-quote-left"></i>-->
-                <!--试试：抬头看看星空、向前多迈一步，你有没有发现明天的事将比今天更有趣？-->
-            <!--</p>-->
-
         </div>
         <!-- End left-wrap -->
         <!-- 图片 -->
@@ -91,111 +86,6 @@
             </div>
         </div>
     </div>
-    <!--<div class="border-list"></div>-->
-
-    <!--<div class="row">-->
-        <!--<div class="col-md-12">-->
-            <!--<div class="bottom-p">-->
-                <!--<div class="title_content">-->
-                    <!--<div class="text_content">我的</div>-->
-                    <!--<div class="clear"></div>-->
-                <!--</div>-->
-
-                <!--<div class="panel-group" id="accordion">-->
-                    <!--<div class="panel panel-default">-->
-                        <!--<div class="panel-heading">-->
-                            <!--<h4 class="panel-title">-->
-                                <!--<a data-toggle="collapse" data-parent="#accordion"-->
-                                   <!--href="#collapseOne" class="collapse_tabs">-->
-                                    <!--Making Money-->
-                                    <!--<i class="glyphicon glyphicon-chevron-up"-->
-                                       <!--style="float: right;font-size: 13px;"></i>-->
-                                <!--</a>-->
-                            <!--</h4>-->
-                        <!--</div>-->
-                        <!--<div id="collapseOne" class="panel-collapse collapse in">-->
-                            <!--<div class="panel-body">-->
-                                <!--<i class="fa fa-quote-left"></i> Anim pariatur-->
-                                <!--cliche reprehenderit, enim eiusmod high life-->
-                                <!--accusamus terry richardson ad squid. 3 wolf moon-->
-                                <!--officia aute, non cupidatat skateboard dolor brunch.-->
-                                <!--Food truck quinoa nesciunt laborum eiusmod. Brunch 3-->
-                                <!--wolf moon tempor, sunt aliqua put a bird on it squid-->
-                                <!--single-origin coffee nulla assumenda shoreditch et.-->
-                                <!--Nihil anim keffiyeh helvetica, craft beer labore wes-->
-                                <!--anderson cred nesciunt sapiente ea proident. Ad-->
-                                <!--vegan excepteur butcher vice lomo. Leggings occaecat-->
-                                <!--craft beer farm-to-table, raw denim aesthetic synth-->
-                                <!--nesciunt you probably haven't heard of them-->
-                                <!--accusamus labore sustainable VHS.-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="panel panel-default">-->
-                        <!--<div class="panel-heading">-->
-                            <!--<h4 class="panel-title">-->
-                                <!--<a data-toggle="collapse" data-parent="#accordion"-->
-                                   <!--href="#collapseTwo" class="collapse_tabs">-->
-                                    <!--Easy to Customize-->
-                                    <!--<i class="glyphicon glyphicon-chevron-down"-->
-                                       <!--style="float: right;font-size: 13px;"></i>-->
-                                <!--</a>-->
-                            <!--</h4>-->
-                        <!--</div>-->
-                        <!--<div id="collapseTwo" class="panel-collapse collapse">-->
-                            <!--<div class="panel-body">-->
-                                <!--<i class="fa fa-quote-left"></i> Anim pariatur-->
-                                <!--cliche reprehenderit, enim eiusmod high life-->
-                                <!--accusamus terry richardson ad squid. 3 wolf moon-->
-                                <!--officia aute, non cupidatat skateboard dolor brunch.-->
-                                <!--Food truck quinoa nesciunt laborum eiusmod. Brunch 3-->
-                                <!--wolf moon tempor, sunt aliqua put a bird on it squid-->
-                                <!--single-origin coffee nulla assumenda shoreditch et.-->
-                                <!--Nihil anim keffiyeh helvetica, craft beer labore wes-->
-                                <!--anderson cred nesciunt sapiente ea proident. Ad-->
-                                <!--vegan excepteur butcher vice lomo. Leggings occaecat-->
-                                <!--craft beer farm-to-table, raw denim aesthetic synth-->
-                                <!--nesciunt you probably haven't heard of them-->
-                                <!--accusamus labore sustainable VHS.-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="panel panel-default">-->
-                        <!--<div class="panel-heading">-->
-                            <!--<h4 class="panel-title">-->
-                                <!--<a data-toggle="collapse" data-parent="#accordion"-->
-                                   <!--href="#collapseThree" class="collapse_tabs">-->
-                                    <!--Moving Let Us Help-->
-                                    <!--<i class="glyphicon glyphicon-chevron-down"-->
-                                       <!--style="float: right;font-size: 13px;"></i>-->
-                                <!--</a>-->
-                            <!--</h4>-->
-                        <!--</div>-->
-                        <!--<div id="collapseThree" class="panel-collapse collapse">-->
-                            <!--<div class="panel-body">-->
-                                <!--<i class="fa fa-quote-left"></i> Anim pariatur-->
-                                <!--cliche reprehenderit, enim eiusmod high life-->
-                                <!--accusamus terry richardson ad squid. 3 wolf moon-->
-                                <!--officia aute, non cupidatat skateboard dolor brunch.-->
-                                <!--Food truck quinoa nesciunt laborum eiusmod. Brunch 3-->
-                                <!--wolf moon tempor, sunt aliqua put a bird on it squid-->
-                                <!--single-origin coffee nulla assumenda shoreditch et.-->
-                                <!--Nihil anim keffiyeh helvetica, craft beer labore wes-->
-                                <!--anderson cred nesciunt sapiente ea proident. Ad-->
-                                <!--vegan excepteur butcher vice lomo. Leggings occaecat-->
-                                <!--craft beer farm-to-table, raw denim aesthetic synth-->
-                                <!--nesciunt you probably haven't heard of them-->
-                                <!--accusamus labore sustainable VHS.-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-
-    <!--<div class="clear"></div>-->
     </div>
     <script type="text/javascript" src="js/jquery.cycle2.min.js"></script>
-</script>
+</template>
