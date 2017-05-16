@@ -19,11 +19,7 @@ jQuery(document).ready(function($) {
             $('.resp-tabs-container').append(template(content, new Object()));
         }
 
-        //这是开始加载是显示的东西 因为如果没加载完图片会一直在旋转，不太适合，所以放在了同文件一起加载
-        $('#spinner').fadeOut(200);
-        $('#preloader').delay(200).fadeOut('slow');
-        $('.wrapper').fadeIn(200);
-        $('#custumize-style').fadeIn(200);
+
 
         //加载Tab选项卡插件
         $('#verticalTab').easyResponsiveTabs({
@@ -36,9 +32,26 @@ jQuery(document).ready(function($) {
         //首页代码块内容
         var code = "var boy;\n";
         code += 'var girl;\n';
-        var html = Prism.highlight(code, Prism.languages.javascript);
-        $('#code-content').html(html);
+        var date = 150;
+        var showStr = '';
+        for(var i = 0;i < code.length; i++){
+            (function(index){
+                setTimeout(function () {
+                    showStr += code.charAt(index);
+                    var html = Prism.highlight(showStr, Prism.languages.javascript, Prism.plugins.lineNumber);
+                    $('#code-content').html(html);
+                }, 200 * (index + 1));
+            })(i);
+        }
+        // var html = Prism.highlight(code, Prism.languages.javascript);
+        // $('#code-content').html(html);
     });
+
+    //这是开始加载是显示的东西 因为如果没加载完图片会一直在旋转，不太适合，所以放在了同文件一起加载
+    $('#spinner').fadeOut(200);
+    $('#preloader').delay(200).fadeOut('slow');
+    $('.wrapper').fadeIn(200);
+    $('#custumize-style').fadeIn(200);
 
     /* ---------------------------------------------------------------------- */
     /* ------------------------------- Taps profile ------------------------- */
