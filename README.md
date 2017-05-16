@@ -1,6 +1,6 @@
-# [mrxzm.github.io](http://mrxzm.ml)
+# [mrxzm.github.top](http://mrxzm.top)
 
-[Mrxzm](http://mrxzm.ml) 的个人主页
+[Mrxzm](http://mrxzm.top) 的个人主页
 ----------------------------------------------
 
 
