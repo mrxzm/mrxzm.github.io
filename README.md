@@ -13,11 +13,6 @@
 loading：jquery
 loading：template
 loading：main.js
-
-main.js 工作
-1. 需要通过ajax加载其余页面
-2. 缓存已经加载的页面
-3. 
 ```
 
 

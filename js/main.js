@@ -19,6 +19,12 @@ jQuery(document).ready(function($) {
             $('.resp-tabs-container').append(template(content, new Object()));
         }
 
+        //这是开始加载是显示的东西 因为如果没加载完图片会一直在旋转，不太适合，所以放在了同文件一起加载
+        $('#spinner').fadeOut(200);
+        $('#preloader').delay(200).fadeOut('slow');
+        $('.wrapper').fadeIn(200);
+        $('#custumize-style').fadeIn(200);
+
         //加载Tab选项卡插件
         $('#verticalTab').easyResponsiveTabs({
             type: 'vertical',
@@ -26,13 +32,13 @@ jQuery(document).ready(function($) {
             // tabidentify: 'tabs',
             fit: true
         });
-    });
 
-    //这是开始加载是显示的东西 因为如果没加载完图片会一直在旋转，不太适合，所以放在了同文件一起加载
-    $('#spinner').fadeOut(200);
-    $('#preloader').delay(200).fadeOut('slow');
-    $('.wrapper').fadeIn(200);
-    $('#custumize-style').fadeIn(200);
+        //首页代码块内容
+        var code = "var boy;\n";
+        code += 'var girl;\n';
+        var html = Prism.highlight(code, Prism.languages.javascript);
+        $('#code-content').html(html);
+    });
 
     /* ---------------------------------------------------------------------- */
     /* ------------------------------- Taps profile ------------------------- */

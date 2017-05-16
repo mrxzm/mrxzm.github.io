@@ -608,7 +608,7 @@ h2.resp-accordion:hover {
         width: 100%;
     }
 
-    #profile .cycle-slideshow {
+    #profile .code-block {
         display: none;
     }
 
@@ -687,14 +687,11 @@ h2.resp-accordion:hover {
 #profile .profile-r {
     padding-right: 0;
 }
-#profile .cycle-slideshow {
+#profile .code-block {
     margin-top: 19px;
     margin-bottom: 20px;
     width: 348px;
     height: 456px;
-}
-#profile .cycle-slideshow img {
-    width: 100%;
 }
 .bottom-p .panel-body {
     padding: 15px;
@@ -1044,7 +1041,7 @@ ul.about {
 }
 
 @media only screen and (min-width : 550px) and (max-width : 991px) {
-    #profile .cycle-slideshow {
+    #profile .code-block {
         margin-left: auto !important;
         margin-right: auto !important;
     }
@@ -2768,4 +2765,8 @@ li h6{
 
 div.ppt {
     display: none !important;
+}
+.code-block pre{
+    width:100%;
+    height: 100%;
 }
