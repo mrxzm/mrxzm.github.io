@@ -84,7 +84,7 @@ a.readmore:hover, a.readmore:focus, a.readmore:active {
 }
 .resp-tabs-container h1 {
     color: #43B6B1 !important;
-    background: url(../../images/arrows-h3/arrow-lightseagreen-h3.png) no-repeat 0px 3px;
+    background: no-repeat 0px 3px;
 }
 
 @media screen and (max-width:540px) {
