@@ -10,11 +10,12 @@ jQuery(document).ready(function($) {
     var tplNames = ['profile','blog', 'contact'];
 
     /* ---------------------------------------------------------------------- */
-    /*	------------------------------- Loading ----------------------------- */
+    /* -------------------------------- Loading ----------------------------- */
     /* ---------------------------------------------------------------------- */
 
     /*页面加载*/
     $(window).load(function() {
+        // var template = require(['../public/template/template.js']);
         //加载模板文件
         for(var i = 0;i< tplNames.length; i++){
             var label = getTempFileLabel(tplNames[i]);
@@ -22,6 +23,9 @@ jQuery(document).ready(function($) {
             $('#verticalTab .resp-tabs-list').append(template(label, new Object()));
             $('.resp-tabs-container').append(template(content, new Object()));
         }
+
+        //测试
+
 
         //加载Tab选项卡插件
         $('#verticalTab').easyResponsiveTabs({
