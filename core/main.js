@@ -63,22 +63,6 @@ require(['core/config/extend_config.js'], function () {
         $('#spinner').fadeOut(200);
         $('#preloader').delay(200).fadeOut('slow');
         $('.wrapper').fadeIn(200);
-        $('#custumize-style').fadeIn(200);
-
-        /* ---------------------------------------------------------------------- */
-        /* ------------------------------- Taps profile ------------------------- */
-        /* ---------------------------------------------------------------------- */
-
-        $('.collapse_tabs').click(function() {
-
-            if ($(this).hasClass('collapsed')) {
-                $(this).find('i.glyphicon').removeClass("glyphicon-chevron-down").addClass("glyphicon-chevron-up");
-            } else {
-                $(this).find('i.glyphicon').removeClass("glyphicon-chevron-up").addClass("glyphicon-chevron-down");
-            }
-
-        });
-
         /* ---------------------------------------------------------------------- */
         /* -------------------------- easyResponsiveTabs ------------------------ */
         /* ---------------------------------------------------------------------- */
@@ -110,39 +94,18 @@ require(['core/config/extend_config.js'], function () {
         });
 
         /* ---------------------------------------------------------------------- */
-        /* --------------------------- Scroll tabs ------------------------------ */
-        /* ---------------------------------------------------------------------- */
-
-        $(".content_2").mCustomScrollbar({
-            theme: "dark-2",
-            contentTouchScroll: true,
-            advanced: {
-                updateOnContentResize: true,
-                updateOnBrowserResize: true,
-                autoScrollOnFocus: false
-            }
-        });
-
-        /* ---------------------------------------------------------------------- */
         /* ------------------------- Effect tabs -------------------------------- */
         /* ---------------------------------------------------------------------- */
 
         var animation_style = 'bounceIn';
 
-        $('.dropdown-select').change(function() {
-            animation_style = $('.dropdown-select').val();
-        });
-
-
         $('ul.resp-tabs-list').on('click', 'li[class^=tabs-]', function() {
-
             var tab_name = $(this).attr('data-tab-name');
 
             $('.resp-tabs-container').addClass('animated ' + animation_style);
             $('.resp-tabs-container').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
                 $('.resp-tabs-container').removeClass('animated ' + animation_style);
             });
-
             $(".content_2").mCustomScrollbar("destroy");
             $(".content_2").mCustomScrollbar({
                 theme: "dark-2",
@@ -153,11 +116,6 @@ require(['core/config/extend_config.js'], function () {
                     autoScrollOnFocus: false
                 }
             });
-
-            if (tab_name == "contact")
-                // initialize();
-                redimensionnement();
-
             return false;
         });
 
@@ -167,11 +125,11 @@ require(['core/config/extend_config.js'], function () {
 
         function redimensionnement() {
             if (window.matchMedia("(max-width: 800px)").matches) {
+                //小于800px
                 $(".content_2").mCustomScrollbar("destroy");
                 $(".resp-vtabs .resp-tabs-container").css("height", "100%");
                 $(".content_2").css("height", "100%");
             } else {
-
                 $(".resp-vtabs .resp-tabs-container").css("height", "580px");
                 $(".content_2").css("height", "580px");
                 $(".content_2").mCustomScrollbar("destroy");
@@ -273,9 +231,8 @@ require(['core/config/extend_config.js'], function () {
         });
 
         /* ---------------------------------------------------------------------- */
-        /* ----------------------------- Portfolio ------------------------------ */
+        /* --------------------------- Portfolio 图库 ---------------------------- */
         /* ---------------------------------------------------------------------- */
-
 
         var filterList = {
             init: function() {
@@ -403,7 +360,7 @@ require(['core/config/extend_config.js'], function () {
         /* ---------------------------------------------------------------------- */
         /* ---------------------------- icon menu ------------------------------- */
         /* ---------------------------------------------------------------------- */
-
+        //在800px以下以menu形式展示
         $(".resp-tabs-container h2.resp-accordion").each(function(){
 
             if($(this).hasClass('resp-tab-active')){
@@ -424,7 +381,6 @@ require(['core/config/extend_config.js'], function () {
                     $(this).find("i.arrow-tabs").removeClass("glyphicon-chevron-up").addClass("glyphicon-chevron-down");
                 }
             });
-
 
         });
 

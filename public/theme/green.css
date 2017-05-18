@@ -84,7 +84,6 @@ a.readmore:hover, a.readmore:focus, a.readmore:active {
 }
 .resp-tabs-container h1 {
     color: #B1CD00 !important;
-    background: url(../../resources/images/arrows-h3/arrow-green-h3.png) no-repeat 0px 3px;
 }
 
 @media screen and (max-width:540px) {
@@ -169,9 +168,6 @@ h2.resp-accordion:hover .hi-icon,
 }
 #sidebar-right .search-blog i, #sidebar-left .search-blog i {
     background: #B1CD00;
-}
-.icon-switcher {	
-    color: #B1CD00 !important;
 }
 .resp-tabs-list li {
     background: #B1CD00;

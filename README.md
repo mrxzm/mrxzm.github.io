@@ -27,3 +27,7 @@
         * function [函数库]
         * main.js [入口]
     * index.html [入口文件]
+
+> 记录一个插件：
+> 用issue做评论
+> [gitment](https://imsun.net/posts/gitment-introduction/)

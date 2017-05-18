@@ -33,9 +33,6 @@
     margin-right: 0 !important; 
 }
 
-#custumize-style {
-    display: none;
-}
 label {
     font-weight: 400 !important;
 }
@@ -132,7 +129,7 @@ a {
     height: 100%;
     background: #fff;
 }
-l.resp-tabs-list, p {
+ul.resp-tabs-list, p {
     margin: 0;
     padding: 0;
 }
@@ -1044,6 +1041,8 @@ ul.about {
     #profile .code-block {
         margin-left: auto !important;
         margin-right: auto !important;
+        width:100%;
+        height: 300px;
     }
 }
 
@@ -2503,80 +2502,6 @@ select {
     outline:none;
     display: inline-block;
     cursor:pointer;
-}
-
-/* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-    select {padding-right:18px}
-}
-
-.dropdown-select {
-    position: relative;
-    width: 200px;
-    margin: 0;
-    padding: 6px 20px;
-    height: 30px;
-    line-height: 14px;
-    font-size: 12px;
-    color: #fff;
-    /* Fallback for IE 8 */
-    background: #3C3E40;
-    border: 0;
-    border-radius: 0;
-    margin-top: 10px;
-    margin-left: 12px;
-
-    &:focus {
-        z-index: 3;
-    width: 100%;
-    color: #394349;
-    outline: 2px solid #49aff2;
-    outline: 2px solid -webkit-focus-ring-color;
-    outline-offset: -2px;
-}
-
-> option {
-    margin: 3px;
-    padding: 6px 8px;
-    text-shadow: none;
-    background: #f2f2f2;
-    border-radius: 3px;
-    cursor: pointer;
-}
-}
-
-/* Fix for IE 8 putting the arrows behind the select element. */
-.lt-ie9 {
-    .dropdown { z-index: 1; }
-.dropdown-select { z-index: -1; }
-.dropdown-select:focus { z-index: 3; }
-}
-
-/* Dirty fix for Firefox adding padding where it shouldn't. */
-@-moz-document url-prefix() { .dropdown-select { padding-left: 6px; } }
-
-.dropdown-dark {
-    background: #444;
-    border-color: #111 #0a0a0a black;
-    @include linear-gradient(top, transparent, rgba(black, .4));
-    @include box-shadow(inset 0 1px rgba(white, .1), 0 1px 1px rgba(black, .2));
-
-    &:before { border-bottom-color: #aaa; }
-&:after { border-top-color: #aaa; }
-
-.dropdown-select {
-    color: #aaa;
-    text-shadow: 0 1px black;
-    /* Fallback for IE 8 */
-    background: #444;
-
-    &:focus { color: #ccc; }
-
-> option {
-    background: #444;
-    text-shadow: 0 1px rgba(black, .4);
-}
-}
 }
 
 li h6{
