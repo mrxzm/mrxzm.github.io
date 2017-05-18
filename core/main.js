@@ -476,8 +476,16 @@ require(['core/config/extend_config.js'], function () {
             return false;
         });
 
-
-
+        /* ---------------------------------------------------------------------- */
+        /* -------------------------------- 百度统计  ---------------------------- */
+        /* ---------------------------------------------------------------------- */
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?8caaea110287dd1582fb46c1b994985b";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
     });
 });
 
