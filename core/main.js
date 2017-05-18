@@ -1,5 +1,5 @@
 /**
- * Created by yimXiaoMo on 2017/5/17.
+ * Created by mrxzm on 2017/5/17.
  */
 
 // jQuery(document).ready(function($) {
@@ -10,49 +10,54 @@
 
 require(['core/config/extend_config.js'], function () {
 
-    require([configPath + 'template_config.js', 'jquery', 'bootstrap' ,
+    /* ---------------------------------------------------------------------- */
+    /* -------------------------------- Loading ----------------------------- */
+    /* ---------------------------------------------------------------------- */
+    require(['text!temp_profile', 'text!temp_blog', 'text!temp_contact', 'jquery', 'bootstrap',
             'jquery_mixitup' , 'jquery_easyResponsiveTabs', 'jquery_mCustomScrollbar',
-        'jquery_prettyPhoto', 'jquery_reveal', 'common'],
-        function (tempName) {
-        /* ---------------------------------------------------------------------- */
-        /* -------------------------------- Loading ----------------------------- */
-        /* ---------------------------------------------------------------------- */
-        /*页面加载*/
-        //$(window).load(function() {
-            //加载模板文件
-            for( item in tempName.path){
-                var label = getTempFileLabel(item);
-                var content = getTempFileContent(item);
-                $('#verticalTab .resp-tabs-list').append(label);
-                $('.resp-tabs-container').append(content);
-            }
+        'jquery_prettyPhoto', 'jquery_reveal','prism','common'
+            ],function(temp_profile, temp_blog, temp_contact) {
 
-            //加载Tab选项卡插件
-            $('#verticalTab').easyResponsiveTabs({
-                type: 'vertical',
-                width: 'auto',
-                // tabidentify: 'tabs',
-                fit: true
-            });
-            redimensionnement();
+        //使用预加载方式加载模板文件
+        // for( item in tempName.path){
+        //     var label = getTempFileLabel(item);
+        //     var content = getTempFileContent(item);
+        //     $('#verticalTab .resp-tabs-list').append(label);
+        //     $('.resp-tabs-container').append(content);
+        // }
 
-            //首页代码块内容
-            var code = "var boy;\n";
-            code += 'var girl;\n';
-            var date = 150;
-            var showStr = '';
-            for(var i = 0;i < code.length; i++){
-                (function(index){
-                    setTimeout(function () {
-                        showStr += code.charAt(index);
-                        var html = Prism.highlight(showStr, Prism.languages.javascript);
-                        $('#code-content').html(html);
-                    }, 200 * (index + 1));
-                })(i);
-            }
-            // var html = Prism.highlight(code, Prism.languages.javascript);
-            // $('#code-content').html(html);
-        // });
+        var respTabsList = $('#verticalTab .resp-tabs-list');
+        var respTabsContainer = $('.resp-tabs-container');
+        respTabsContainer.append(getTempDOMContent(temp_profile));
+        respTabsList.append(getTempDOMLabel(temp_profile));
+        respTabsContainer.append(getTempDOMContent(temp_blog));
+        respTabsList.append(getTempDOMLabel(temp_blog));
+        respTabsContainer.append(getTempDOMContent(temp_contact));
+        respTabsList.append(getTempDOMLabel(temp_contact));
+
+        //加载Tab选项卡插件
+        $('#verticalTab').easyResponsiveTabs({
+            type: 'vertical',
+            width: 'auto',
+            // tabidentify: 'tabs',
+            fit: true
+        });
+        redimensionnement();
+
+        //首页代码块内容
+        var code = "var boy;\n";
+        code += 'var girl;\n';
+        var date = 150;
+        var showStr = '';
+        for(var i = 0;i < code.length; i++){
+            (function(index){
+                setTimeout(function () {
+                    showStr += code.charAt(index);
+                    var html = Prism.highlight(showStr, Prism.languages.javascript);
+                    $('#code-content').html(html);
+                }, 200 * (index + 1));
+            })(i);
+        }
 
         //这是开始加载是显示的东西
         $('#spinner').fadeOut(200);
