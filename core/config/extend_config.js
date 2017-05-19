@@ -46,6 +46,7 @@ require.config({
     },
     //等待超时 github国内访问比较慢
     nodeIdCompat : 0,
+    waitSeconds : 0,
 
 });
 
