@@ -43,7 +43,9 @@ require.config({
         temp_blog :{exports : 'temp_blog'},
         temp_contact :{exports : 'temp_contact'},
 
-    }
+    },
+    //等待超时 github国内访问比较慢
+    nodeIdCompat : 0,
 
 });
 
