@@ -45,8 +45,11 @@ require(['core/config/extend_config.js'], function () {
         redimensionnement();
 
         //首页代码块内容
-        var code = "var boy;\n";
-        code += 'var girl;\n';
+        var code = 'class Word\n';
+        code += "{\n";
+        code += "\tvar boy;\n";
+        code += '\tvar girl;\n';
+        code += '}';
         var date = 150;
         var showStr = '';
         for(var i = 0;i < code.length; i++){
