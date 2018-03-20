@@ -159,16 +159,10 @@ require(['core/config/extend_config.js'], function () {
         /* -------------------------------- 留言 -------------------------------- */
         /* ---------------------------------------------------------------------- */
         var $contactform = $('#contactform'),
-            $success = ' 谢谢你的反馈消息！';
+            $success = ' 谢谢你的反馈消息！',
+            output_error = '检查计算机中是否有邮箱！';
 
         $contactform.submit(function () {
-            var name = $(this).find('input:text[name=name]').val();
-            var email = $(this).find('input:text[name=email]').val();
-            var content = $(this).find('textarea[name=message]').val();
-            var url = 'mailto:' + encodeURIComponent('mrxzm@live.com');
-            url += '?subject=' + encodeURIComponent('['+ name +'] mrxzm主页的反馈消息');
-            url += '&body=' + encodeURIComponent('姓名:' + name + '\n' +'联系方式:' + email + '\n\t' + content);
-            window.location = url;
             // 成功消息
             var responseSuccess = '<div class="alert alert-success success-send">' +
                 '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' +
@@ -179,8 +173,23 @@ require(['core/config/extend_config.js'], function () {
                 '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' +
                 '<i class="glyphicon glyphicon-remove" style="margin-right: 5px;"></i> ' + output_error
                 + '</div>';
+
+
+            var name = $(this).find('input:text[name=name]').val();
+            var email = $(this).find('input:text[name=email]').val();
+            var content = $(this).find('textarea[name=message]').val();
+            var url = 'mailto:' + encodeURIComponent('mrxzm@live.com');
+            url += '?subject=' + encodeURIComponent('['+ name +'] mrxzm主页的反馈消息');
+            url += '&body=' + encodeURIComponent('姓名:' + name + '\n' +'联系方式:' + email + '\n\t' + content);
+            window.location = url;
+
             $(".error-send,.success-send").remove();
-            $contactform.prepend(responseSuccess);
+            if(true){ // new ActiveXObject("Outlook.Application") //TODO 发送成功提示
+                $contactform.prepend(responseSuccess);
+            }
+            else {
+                $contactform.prepend(responseError);
+            }
             return false;
         });
 
