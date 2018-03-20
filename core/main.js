@@ -13,8 +13,8 @@ require(['core/config/extend_config.js'], function () {
     /* ---------------------------------------------------------------------- */
     /* -------------------------------- Loading ----------------------------- */
     /* ---------------------------------------------------------------------- */
-    require(['text!temp_profile', 'text!temp_blog', 'text!temp_contact', 'jquery', 'bootstrap',
-            'jquery_mixitup' , 'jquery_easyResponsiveTabs', 'jquery_mCustomScrollbar',
+    require(['text!temp_profile', 'text!temp_blog', 'text!temp_contact',
+        'jquery', 'bootstrap', 'jquery_mixitup' , 'jquery_easyResponsiveTabs', 'jquery_mCustomScrollbar',
         'jquery_prettyPhoto', 'jquery_reveal','prism','common'
             ],function(temp_profile, temp_blog, temp_contact) {
 
@@ -25,7 +25,6 @@ require(['core/config/extend_config.js'], function () {
         //     $('#verticalTab .resp-tabs-list').append(label);
         //     $('.resp-tabs-container').append(content);
         // }
-
         var respTabsList = $('#verticalTab .resp-tabs-list');
         var respTabsContainer = $('.resp-tabs-container');
         respTabsContainer.append(getTempDOMContent(temp_profile));
@@ -123,7 +122,7 @@ require(['core/config/extend_config.js'], function () {
         });
 
         /* ---------------------------------------------------------------------- */
-        /* ---------------------- 初始化 选项卡 自适应 ----------------------------- */
+        /* ---------------------- 初始化 选项卡 自适应 -------------------------- */
         /* ---------------------------------------------------------------------- */
 
         function redimensionnement() {
@@ -445,6 +444,22 @@ require(['core/config/extend_config.js'], function () {
             var s = document.getElementsByTagName("script")[0];
             s.parentNode.insertBefore(hm, s);
         })();
+
+        /* ---------------------------------------------------------------------- */
+        /* -------------------------------- 留言 -------------------------------- */
+        /* ---------------------------------------------------------------------- */
+        $('#contactform').submit(function () {
+            var name = $(this).find('input:text[name=name]').val();
+            var email = $(this).find('input:text[name=email]').val();
+            var content = $(this).find('textarea[name=message]').val();
+            var url = 'mailto:' + encodeURIComponent('mrxzm@live.com');
+            url += '?subject=' + encodeURIComponent('['+ name +'] mrxzm主页的反馈消息');
+            url += '&body=' + encodeURIComponent('姓名:' + name + '\n' +'联系方式:' + email + '\n\t' + content);
+            window.location = url;
+            return true;
+        });
+
+
     });
 });
 

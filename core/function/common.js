@@ -10,7 +10,7 @@
 var number = 0;
 
 /**
- * 通过模板字节流返回内容
+ * 通过模板字节流返回内容DOM
  * @param fileStream
  */
 function getTempDOMContent(dom) {
@@ -18,7 +18,7 @@ function getTempDOMContent(dom) {
 }
 
 /**
- * 通过模板字节流返回标签
+ * 通过模板字节流返回标签DOM
  * @param fileStream
  */
 function getTempDOMLabel(dom) {
