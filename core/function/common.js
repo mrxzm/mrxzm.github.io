@@ -55,6 +55,14 @@ function getTempDOM(dom, type) {
  *     <iframe src="template/contact.html" name="iframe-contact" ></iframe>
  *     <iframe src="template/profile.html" name="iframe-profile" ></iframe>
  * </div>
+ * <!--预加载html模板-->
+ * <div id="tempfile-none" style="display:none">
+ *  <iframe src="template/blog.html" name="iframe-blog" ></iframe>
+ *  <iframe src="template/contact.html" name="iframe-contact" ></iframe>
+ *  <iframe src="template/profile.html" name="iframe-profile" ></iframe>
+ *  <!--<iframe src="html/portfolio.html" name="iframe-portfolio" ></iframe>-->
+ *  <!--<iframe src="html/resume.html" name="iframe-resume" ></iframe>-->
+ * </div>
  * 通过指定的名称 and 模板类型(id)获取index.html中的frames模板文档的template数据
  * @param fileName  模板名称
  * @param type  类型

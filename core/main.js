@@ -15,16 +15,9 @@ require(['core/config/extend_config.js'], function () {
     /* ---------------------------------------------------------------------- */
     require(['text!temp_profile', 'text!temp_blog', 'text!temp_contact',
         'jquery', 'bootstrap', 'jquery_mixitup' , 'jquery_easyResponsiveTabs', 'jquery_mCustomScrollbar',
-        'jquery_prettyPhoto', 'jquery_reveal','prism','common'
+        'jquery_prettyPhoto', 'jquery_reveal','prism' ,'common', 'blog'
             ],function(temp_profile, temp_blog, temp_contact) {
 
-        //使用预加载方式加载模板文件
-        // for( item in tempName.path){
-        //     var label = getTempFileLabel(item);
-        //     var content = getTempFileContent(item);
-        //     $('#verticalTab .resp-tabs-list').append(label);
-        //     $('.resp-tabs-container').append(content);
-        // }
         var respTabsList = $('#verticalTab .resp-tabs-list');
         var respTabsContainer = $('.resp-tabs-container');
         respTabsContainer.append(getTempDOMContent(temp_profile));
@@ -43,7 +36,14 @@ require(['core/config/extend_config.js'], function () {
         });
         redimensionnement();
 
-        //首页代码块内容
+        //这是开始加载时显示的东西
+        $('#spinner').fadeOut(200);
+        $('#preloader').delay(200).fadeOut('slow');
+        $('.wrapper').fadeIn(200);
+
+        /* ---------------------------------------------------------------------- */
+        /* ------------------------------ 首页代码块 ---------------------------- */
+        /* ---------------------------------------------------------------------- */
         var code = 'class Word\n';
         code += "{\n";
         code += "\tvar boy;\n";
@@ -61,10 +61,6 @@ require(['core/config/extend_config.js'], function () {
             })(i);
         }
 
-        //这是开始加载是显示的东西
-        $('#spinner').fadeOut(200);
-        $('#preloader').delay(200).fadeOut('slow');
-        $('.wrapper').fadeIn(200);
         /* ---------------------------------------------------------------------- */
         /* -------------------------- easyResponsiveTabs ------------------------ */
         /* ---------------------------------------------------------------------- */
@@ -244,81 +240,6 @@ require(['core/config/extend_config.js'], function () {
             horizontal_padding: 5,
             deeplinking: false,
         });
-
-        /* ---------------------------------------------------------------------- */
-        /* --------------------------------- Blog ------------------------------- */
-        /* ---------------------------------------------------------------------- */
-
-        // More blog
-        $('a.read_m').click(function() {
-            var pagina = $(this).attr('href');
-            var postdetail = pagina + '-page';
-
-            if (pagina.indexOf("#post-") != -1) {
-
-                $('#blog-page').hide();
-
-                $(postdetail).show();
-                $(".tabs-blog").trigger('click');
-            }
-
-            return false;
-
-        });
-
-        // More blog
-        $('a.read_more').click(function() {
-            var pagina = $(this).attr('href');
-            var postdetail = pagina + '-page';
-
-            if (pagina.indexOf("#post-") != -1) {
-
-                $('#blog-page').hide();
-
-                $(postdetail).show();
-                $(".tabs-blog").trigger('click');
-            }
-
-            return false;
-
-        });
-
-        //pagination All
-        $('.content-post a').click(function() {
-            var pagina = $(this).attr('href');
-
-            if (pagina == "#blog") {
-
-                $('.content-post').hide();
-                $('#blog-page').show();
-                $(".tabs-blog").trigger('click');
-
-            }
-
-            return false;
-
-        });
-
-        //pagination blog
-        $('.content-post #pagination').click(function() {
-
-
-            var pagina = $(this).attr('href');
-            var postdetail = pagina + '-page';
-
-            if (pagina.indexOf("#post-") != -1) {
-
-                $('#blog-page').hide();
-                $('.content-post').hide();
-
-                $(postdetail).show();
-                $(".tabs-blog").trigger('click');
-            }
-
-            return false;
-
-        });
-
 
         /* ---------------------------------------------------------------------- */
         /* ---------------------------- icon menu ------------------------------- */
