@@ -74,7 +74,7 @@ require(['core/config/extend_config.js'], function () {
                     showStr += code.charAt(index);
                     var html = Prism.highlight(showStr, Prism.languages.javascript);
                     $('#code-content').html(html);
-                }, 200 * (index + 1));
+                }, date * (index + 1));
             })(i);
         }
 
