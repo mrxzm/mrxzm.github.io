@@ -47,24 +47,24 @@ require(['core/config/extend_config.js'], function () {
         var code =
             'void Word()\n' +
             "{\n" +
-                "\tvar boy = new People(man);\n" +
-                "\tvar girl = new People(woman);\n" +
-                "\tforeach(int year in boy.experience)\n" +
-                "\t{\n" +
-                "\t\tif(year == 18)\n" +
-                "\t\t{\n" +
-                "\t\t\tboy.heart = girl;\n" +
-                "\t\t\tgirl.heart = boy;\n" +
-                "\t\t}\n" +
-                "\t\tboy.experience.Add(girl);\n"+
-                "\t\tif(year == 19)\n" +
-                "\t\t{\n" +
-                "\t\t\tboy.experience.Add(school);\n" +
-                "\t\t\tgirl.experience.Add(work);\n" +
-                "\t\t}\n" +
-                "\t\t...\n" +
-                "\t}\n" +
-                "\tboy.Dispose();\n" +
+                "    var boy = new People(man);\n" +
+                "    var girl = new People(woman);\n" +
+                "    foreach(int year in boy.experience)\n" +
+                "    {\n" +
+                "        if(year == 18)\n" +
+                "        {\n" +
+                "            boy.heart = girl;\n" +
+                "            girl.heart = boy;\n" +
+                "        }\n" +
+                "        boy.experience.Add(girl);\n"+
+                "        if(year == 19)\n" +
+                "        {\n" +
+                "            boy.experience.Add(school);\n" +
+                "            girl.experience.Add(work);\n" +
+                "        }\n" +
+                "        ...\n" +
+                "    }\n" +
+                "    boy.Dispose();\n" +
             '}';
         var date = 150;
         var showStr = '';
