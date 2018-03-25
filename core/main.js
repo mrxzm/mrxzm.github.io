@@ -44,11 +44,28 @@ require(['core/config/extend_config.js'], function () {
         /* ---------------------------------------------------------------------- */
         /* ------------------------------ 首页代码块 ---------------------------- */
         /* ---------------------------------------------------------------------- */
-        var code = 'class Word\n';
-        code += "{\n";
-        code += "\tvar boy;\n";
-        code += '\tvar girl;\n';
-        code += '}';
+        var code =
+            'void Word()\n' +
+            "{\n" +
+                "\tvar boy = new People(man);\n" +
+                "\tvar girl = new People(woman);\n" +
+                "\tforeach(int year in boy.experience)\n" +
+                "\t{\n" +
+                "\t\tif(year == 18)\n" +
+                "\t\t{\n" +
+                "\t\t\tboy.heart = girl;\n" +
+                "\t\t\tgirl.heart = boy;\n" +
+                "\t\t}\n" +
+                "\t\tboy.experience.Add(girl);\n"+
+                "\t\tif(year == 19)\n" +
+                "\t\t{\n" +
+                "\t\t\tboy.experience.Add(school);\n" +
+                "\t\t\tgirl.experience.Add(work);\n" +
+                "\t\t}\n" +
+                "\t\t...\n" +
+                "\t}\n" +
+                "\tboy.Dispose();\n" +
+            '}';
         var date = 150;
         var showStr = '';
         for(var i = 0;i < code.length; i++){
