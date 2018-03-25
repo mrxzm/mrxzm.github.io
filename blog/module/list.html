@@ -157,9 +157,9 @@
 
                         <div class="col-md-12"
                              style="margin-top: 20px;">
-                            <a href="#post-${number|pageLower}" class="readmore"><i
+                            <a href="#post-${number|pageLower}" class="readmore {@if number|pageLower == 0}disabled{@/if}"><i
                                     class="glyphicon glyphicon-chevron-right"></i></a>
-                            <a href="#post-${number|pageUp}" class="readmore"><i
+                            <a href="#post-${number|pageUp}" class="readmore {@if number|pageUp == 0}disabled{@/if}"><i
                                     class="glyphicon glyphicon-chevron-left"></i></a>
                             <a href="#blog" class="readmore"><i
                                     class="glyphicon glyphicon-chevron-left"></i>

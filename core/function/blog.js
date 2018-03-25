@@ -7,7 +7,10 @@
  */
 
 define([ 'text!temp_blog_list',
-    'marked', 'analyze', 'jquery', 'juicer'],function(temp_blog_list, marked) {
+    'marked', 'analyze', 'jquery', 'juicer'],function(temp_blog_list, marked, analyze, $) {
+
+    // 文章名称集
+    window._articleNameList = [];
 
     /* ---------------------------------------------------------------------- */
     /*	------------------------------- 分页 -------------------------------- */
@@ -67,13 +70,23 @@ define([ 'text!temp_blog_list',
 
     //pageLower  下
     juicer.register('pageLower', function (data) {
-        return (parseInt(data) + 1);
-    })
+        var tag = 0;
+        var index = _articleNameList.indexOf(data);
+        if( index !== _articleNameList.length){
+            tag = _articleNameList[ index + 1];
+        }
+        return tag;
+    });
 
     //pageUp 上
     juicer.register('pageUp', function (data) {
-        return (parseInt(data) - 1);
-    })
+        var tag = 0;
+        var index = _articleNameList.indexOf(data);
+        if( index !== 0){
+            tag = _articleNameList[ index - 1];
+        }
+        return tag;
+    });
 
     //showLabel 标签分割
     // <span class="tag">#php</span>
@@ -90,13 +103,13 @@ define([ 'text!temp_blog_list',
     /* ------------------------------ 文章读取 ------------------------------ */
     /* ---------------------------------------------------------------------- */
     //文章列表
-
     $.get(_serverURL + "blog/articleConfig.json", function (data) {
-        data.article.forEach(function (item, index) {
+        window._articleNameList = data.article;
+        _articleNameList.forEach(function (item, index) {
             //文章
             $.get(_serverURL + 'blog/article/' + item, function (article) {
                 var articleInfo = analyze.getArticleInfo(article);
-
+                
                 var tplList = getTempDOM(temp_blog_list, 'blog-text');
                 var tplContent = getTempDOM(temp_blog_list, 'blog-content');
 
