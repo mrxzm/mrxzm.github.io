@@ -49,8 +49,8 @@
                             </ul>
 
                             <div class="blog-content">
-                                <p><i class="fa fa-quote-left"></i>${abstract}
-                                </p></div>
+                                <p><i class="fa fa-quote-left"></i>${abstract}</p>
+                            </div>
                         </div>
                     </div>
 
@@ -65,6 +65,80 @@
 
     <div class="clear"></div>
 </template>
+
+<!----------------------- 单张图 ----------------------->
+    <template id="temp-blog-image">
+        <article id="post-${number}" class="blog-article">
+
+            <div class="col-md-12">
+
+                <div class="row">
+
+                    <div class="col-md-12 post_media">
+
+                        <div class="post-format-icon">
+                            <a href="#" class="item-date"><span
+                                    class="fa fa-picture-o"></span></a>
+                        </div>
+
+                        <div class="media">
+                            <div class="he-wrap tpl2">
+                                <img src="${image}"
+                                     class="img-hover" alt=""/>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 post_content">
+                        <div class="content post_format_standart">
+                            <div class="top_c ">
+
+                                <div class="title_content">
+                                    <div class="text_content"><a
+                                            href="#post-${number}"
+                                            class="read_more">${title}</a></div>
+                                    <div class="clear"></div>
+                                </div>
+
+                                <ul class="info">
+                                    <!--<li>-->  <!-- 评论数 -->
+                                    <!--<i class="glyphicon glyphicon-comment"></i>-->
+                                    <!--2 Comments-->
+                                    <!--</li>-->
+                                    <li>
+                                        <i class="glyphicon glyphicon-time"></i>
+                                        ${time}
+                                    </li>
+                                    <li>
+                                        <i class="glyphicon glyphicon-user"></i>
+                                        ${user}
+                                    </li>
+                                    <li>
+                                        <i class="glyphicon glyphicon-tag"></i>
+                                        ${label}
+                                    </li>
+                                </ul>
+
+                                <div class="blog-content">
+                                    <p><i class="fa fa-quote-left"></i>${abstract}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="#post-${number}" class="read_m read_more pull-right">查看全部
+                            <i class='glyphicon glyphicon-chevron-right'></i></a>
+
+                    </div>
+                </div>
+
+            </div>
+        </article>
+        <div class="clear"></div>
+    </template>
+
 
 <!---------- 文章内容  ------------>
 <template id="temp-blog-content">
@@ -1636,90 +1710,5 @@
 <div class="clear"></div>
 </template>
 
-<!----------------------- 单张图 ----------------------->
-<template id="image">
-    <article id="post-3" class="blog-article">
 
-        <div class="col-md-12">
-
-            <div class="row">
-
-                <div class="col-md-12 post_media">
-
-                    <div class="post-format-icon">
-                        <a href="#" class="item-date"><span
-                                class="fa fa-picture-o"></span></a>
-                    </div>
-
-                    <div class="media">
-                        <div class="he-wrap tpl2">
-                            <img src="images/blog/blog-4.jpg"
-                                 class="img-hover" alt=""/>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12 post_content">
-                    <div class="content post_format_standart">
-                        <div class="top_c ">
-
-                            <div class="title_content">
-                                <div class="text_content"><a
-                                        href="#post-3"
-                                        class="read_more">Blog Post
-                                    Image</a></div>
-                                <div class="clear"></div>
-                            </div>
-
-                            <ul class="info">
-                                <li>
-                                    <i class="glyphicon glyphicon-comment"></i>
-                                    2 Comments
-                                </li>
-                                <li>
-                                    <i class="glyphicon glyphicon-time"></i>
-                                    January 31, 2014
-                                </li>
-                                <li>
-                                    <i class="glyphicon glyphicon-user"></i>
-                                    by Jane Doe
-                                </li>
-                                <li>
-                                    <i class="glyphicon glyphicon-tag"></i>
-                                    php, web design
-                                </li>
-                            </ul>
-
-                            <div class="blog-content">
-                                <p><i class="fa fa-quote-left"></i>
-                                    Lorem ipsum dolor sit amet,
-                                    consectetuer adipiscing elit.
-                                    Aenean commodo ligula eget
-                                    dolor. Aenean massa. Cum sociis
-                                    natoque penatibus et magnis dis
-                                    parturient montes, nascetur
-                                    ridiculus mus. Donec quam felis,
-                                    ultricies nec, pellentesque eu,
-                                    pretium quis, sem. Nulla
-                                    consequat massa quis enim. Donec
-                                    pede justo, fringilla vel,
-                                    aliquet nec, vulputate eget,
-                                    arcu. In enim justo...</p></div>
-                        </div>
-                    </div>
-
-                    <a href="#post-3" class="read_m pull-right">Read
-                        More
-                        <i class='glyphicon glyphicon-chevron-right'></i></a>
-
-                </div>
-            </div>
-
-        </div>
-    </article>
-    <div class="clear"></div>
-</template>
 </div>

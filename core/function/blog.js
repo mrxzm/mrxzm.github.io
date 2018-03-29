@@ -111,7 +111,17 @@ define([ 'text!temp_blog_list', 'text!articleConfig',
                 $.get(_serverURL + 'blog/article/' + item, function (article) {
                     var articleInfo = analyze.getArticleInfo(article);
 
-                    var tplList = getTempDOM(temp_blog_list, 'blog-text');
+                    var tplList = null;
+                    if(articleInfo.image == undefined && articleInfo.images == undefined){
+                        tplList = getTempDOM(temp_blog_list, 'blog-text');
+                    }
+                    else if(articleInfo.image != undefined){
+                        tplList = getTempDOM(temp_blog_list, 'blog-image');
+                    }
+                    else if(articleInfo.images != undefined){
+                        tplList = getTempDOM(temp_blog_list, 'blog-images');
+                    }
+
                     var tplContent = getTempDOM(temp_blog_list, 'blog-content');
 
                     var htmlList = juicer(tplList, articleInfo);
