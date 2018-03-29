@@ -7,7 +7,7 @@
  */
 
 define([ 'text!temp_blog_list', 'text!articleConfig',
-    'marked', 'analyze', 'jquery', 'juicer'],function(temp_blog_list, articleConfig, marked, analyze, $) {
+    'marked', 'analyze', 'jquery', 'juicer', "common"],function(temp_blog_list, articleConfig, marked, analyze, $) {
 
     // 文章名称集
     window._articleNameList = [];
