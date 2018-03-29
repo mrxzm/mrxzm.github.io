@@ -6,8 +6,8 @@
  *
  */
 
-define([ 'text!temp_blog_list',
-    'marked', 'analyze', 'jquery', 'juicer'],function(temp_blog_list, marked, analyze, $) {
+define([ 'text!temp_blog_list', 'text!articleConfig',
+    'marked', 'analyze', 'jquery', 'juicer'],function(temp_blog_list, articleConfig, marked, analyze, $) {
 
     // 文章名称集
     window._articleNameList = [];
@@ -103,28 +103,29 @@ define([ 'text!temp_blog_list',
     /* ------------------------------ 文章读取 ------------------------------ */
     /* ---------------------------------------------------------------------- */
     //文章列表
-    $.get(_serverURL + "blog/articleConfig.json", function (data) {
-        window._articleNameList = data.article;
-        _articleNameList.forEach(function (item, index) {
-            //文章
-            $.get(_serverURL + 'blog/article/' + item, function (article) {
-                var articleInfo = analyze.getArticleInfo(article);
-                
-                var tplList = getTempDOM(temp_blog_list, 'blog-text');
-                var tplContent = getTempDOM(temp_blog_list, 'blog-content');
+    var timeId = setInterval(function (args) {
+        if(articleConfig != null || articleConfig != ''){
+            window._articleNameList = JSON.parse(articleConfig).article;
+            _articleNameList.forEach(function (item, index) {
+                //文章
+                $.get(_serverURL + 'blog/article/' + item, function (article) {
+                    var articleInfo = analyze.getArticleInfo(article);
 
-                var htmlList = juicer(tplList, articleInfo);
-                articleInfo['content'] = marked(article);
-                var htmlContent = juicer(tplContent, articleInfo);
+                    var tplList = getTempDOM(temp_blog_list, 'blog-text');
+                    var tplContent = getTempDOM(temp_blog_list, 'blog-content');
 
-                $('#blog-page').append(htmlList);
-                $('#blog-article').append(htmlContent);
-                // console.log(htmlContent);
+                    var htmlList = juicer(tplList, articleInfo);
+                    articleInfo['content'] = marked(article);
+                    var htmlContent = juicer(tplContent, articleInfo);
+
+                    $('#blog-page').append(htmlList);
+                    $('#blog-article').append(htmlContent);
+                    // console.log(htmlContent);
+                });
+
             });
-
-        });
-    });
-
-
+            clearInterval(timeId);
+        }
+    }, 200);
 
 })

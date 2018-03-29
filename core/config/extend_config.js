@@ -29,6 +29,9 @@ require.config({
         blog : 'core/function/blog',
         analyze : 'blog/analyze',
 
+        // blog config
+        articleConfig : 'blog/articleConfig.json',
+
         //模板配置
         temp_profile : 'template/profile.html',
         temp_blog : 'template/blog.html',
@@ -51,8 +54,10 @@ require.config({
         temp_profile :{exports : 'temp_profile'},
         temp_blog :{exports : 'temp_blog'},
         temp_contact :{exports : 'temp_contact'},
-
-        temp_blog_list : {exports : 'temp_blog_list'}
+        //blog temp
+        temp_blog_list : {exports : 'temp_blog_list'},
+        //blog config
+        articleConfig : {exports : 'articleConfig'},
 
     },
     //等待超时 github国内访问比较慢
